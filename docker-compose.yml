@@ -23,3 +23,6 @@ services:
       - "5432:5432"
     volumes:
       - spring_demo_db_data:/var/lib/postgresql/data
+
+volumes:
+  spring_demo_db_data:
