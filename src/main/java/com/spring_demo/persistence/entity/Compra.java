@@ -1,6 +1,7 @@
 package com.spring_demo.persistence.entity;
 import jakarta.persistence.*;
 import  java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "compras")
@@ -20,6 +21,14 @@ public class Compra {
     private String medio_pago;
 
     private String comentario;
+
+    @ManyToOne
+    @JoinColumn(name = "id_cliente", insertable = false, updatable = false)
+    private Cliente cliente;
+
+    @OneToMany(mappedBy = "compra")
+    private List<ComprasProducto> productos;
+
 
     public Integer getIdCompra() {
         return idCompra;
