@@ -12,6 +12,7 @@ import java.util.Optional;
 
 @Repository
 public class ProductoRepository implements ProductRepository {
+    //We use autowired to avoid create object of a manually way
     @Autowired
     private ProductoCrudRepository productoCrudRepository;
 
