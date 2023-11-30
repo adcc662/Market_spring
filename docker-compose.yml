@@ -16,7 +16,7 @@ services:
   spring_demo-postgres:
     image: postgres:14
     environment:
-      POSRGRES_DB: spring_demo
+      POSTGRES_DB: spring_demo
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: admin
     ports:
