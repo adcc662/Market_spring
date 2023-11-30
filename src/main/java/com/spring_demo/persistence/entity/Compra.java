@@ -21,6 +21,7 @@ public class Compra {
     private String medio_pago;
 
     private String comentario;
+    private String estado;
 
     @ManyToOne
     @JoinColumn(name = "id_cliente", insertable = false, updatable = false)
@@ -78,5 +79,19 @@ public class Compra {
         this.estado = estado;
     }
 
-    private String estado;
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    public List<ComprasProducto> getProductos() {
+        return productos;
+    }
+
+    public void setProductos(List<ComprasProducto> productos) {
+        this.productos = productos;
+    }
 }

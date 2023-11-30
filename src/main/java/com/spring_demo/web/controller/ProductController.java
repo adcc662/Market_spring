@@ -3,6 +3,7 @@ package com.spring_demo.web.controller;
 import com.spring_demo.domain.Product;
 import com.spring_demo.domain.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,10 +17,12 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
+    @GetMapping()
     public List<Product> getAll(){
         return productService.getAll();
     }
 
+    @GetMapping
     public Optional<Product> getProduct(int productId){
         return productService.getProduct(productId);
     }
