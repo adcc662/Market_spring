@@ -18,7 +18,7 @@ public class Compra {
     private LocalDateTime fecha;
 
     @Column(name = "medio_pago")
-    private String medio_pago;
+    private String medioPago;
 
     private String comentario;
     private String estado;
@@ -27,7 +27,7 @@ public class Compra {
     @JoinColumn(name = "id_cliente", insertable = false, updatable = false)
     private Cliente cliente;
 
-    @OneToMany(mappedBy = "compra")
+    @OneToMany(mappedBy = "compra", cascade = {CascadeType.ALL})
     private List<ComprasProducto> productos;
 
 
@@ -55,12 +55,12 @@ public class Compra {
         this.fecha = fecha;
     }
 
-    public String getMedio_pago() {
-        return medio_pago;
+    public String getMedioPago() {
+        return medioPago;
     }
 
-    public void setMedio_pago(String medio_pago) {
-        this.medio_pago = medio_pago;
+    public void setMedioPago(String medioPago) {
+        this.medioPago = medioPago;
     }
 
     public String getComentario() {
