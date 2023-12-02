@@ -11,6 +11,8 @@ public class Purchase {
     private String comment;
     private String state;
 
+    private List<PurchaseItem> items;
+
     public int getPurchaseId() {
         return purchaseId;
     }
@@ -59,14 +61,14 @@ public class Purchase {
         this.state = state;
     }
 
-    public List<PurchaseItem> getItem() {
-        return item;
+    public List<PurchaseItem> getItems() {
+        return items;
     }
 
-    public void setItem(List<PurchaseItem> item) {
-        this.item = item;
+    public void setItems(List<PurchaseItem> items) {
+        this.items = items;
     }
 
-    private List<PurchaseItem> item;
+
 
 }
